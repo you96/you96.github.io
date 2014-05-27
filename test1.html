@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html>
 <title>redirect page</title>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 243225579135105,
+      xfbml      : true,
+      version    : 'v2.0'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  function share(){
+	FB.ui(
+	  {
+	    method: 'share',
+	    href: 'http://you96.github.io/test.html',
+	    display: 'popup'
+	  },
+	  function(){});
+	}
+</script>
 <body>
-	天上一片黑布隆冬，好似白面往下扔。
-	坟头儿倒比馒头那么大啊，井是大窟窿。
+	<div>天上一片黑布隆冬，好似白面往下扔。
+	坟头儿倒比馒头那么大啊，井是大窟窿。</div>
+	<a href="#" onclick="share()">Facebook SDK for JavaScript</a>
 </body>
 </html>
