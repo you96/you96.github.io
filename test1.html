@@ -1,38 +1,76 @@
-<!DOCTYPE html>
 <html>
-<title>redirect page</title>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : 1436349209955526,
-      xfbml      : true,
-      version    : 'v2.0'
-    });
-  };
+<head>
+<title>Open Graph Getting Started App - og.likes</title>
+ <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 1436349209955526,
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-</script>
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+<style type="text/css">
+div { padding: 10px; }
+</style>
+<meta charset="UTF-8">
+</head>
 <body>
-<script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) {return;}
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
 function share(){
 	FB.ui(
 	  {
 	    method: 'share',
-	    href: 'http://www.radioline.co',
+	    href: 'http://you96.github.io/test1.html',
 	    display: 'popup'
 	  },
 	  function(){});
-	}
+}
+function shareRL(){
+	FB.ui(
+	  {
+	    method: 'share',
+	    href: 'http://radioline.co',
+	    display: 'popup'
+	  },
+	  function(){});
+}
+
 </script>
-	<div>天上一片黑布隆冬，好似白面往下扔。
-	坟头儿倒比馒头那么大啊，井是大窟窿。</div>
-	<button href="#" onclick="share()">Facebook SDK for JavaScript</button>
+
+
+<div id="result">
+	<p>ppnn13%</p>
+	<p>dkstFeb.1st</p>
+
+
+	<div class="fb-like" data-href="http://www.zhihu.com" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+	<div></div>
+<a href="#" onclick="share()">Facebook SDK for JavaScript</a><br/>
+<a onclick="shareRL()">Share Radioline.co</a><br/>
+
+
+
+
+
+</div>
+
 </body>
 </html>
