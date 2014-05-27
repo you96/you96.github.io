@@ -40,17 +40,14 @@ FB.ui(
 
 
 	<div class="fb-like" data-href="http://www.zhihu.com" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+	<div></div>
 <button onclick="FB.ui(
   {
     method: 'share',
-    href: 'https://developers.facebook.com/docs/',
+    href: 'https://developers.facebook.com/docs/'
   },
-  function(response) {
-    if (response && !response.error_code) {
-      alert('Posting completed.');
-    } else {
-      alert('Error while posting.');
-    }
+  function() {
+    
   }
 );">1111111111111</button>
 
