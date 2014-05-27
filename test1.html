@@ -17,7 +17,11 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-  function share(){
+
+</script>
+<body>
+<script>
+function share(){
 	FB.ui(
 	  {
 	    method: 'share',
@@ -27,7 +31,6 @@
 	  function(){});
 	}
 </script>
-<body>
 	<div>天上一片黑布隆冬，好似白面往下扔。
 	坟头儿倒比馒头那么大啊，井是大窟窿。</div>
 	<button href="#" onclick="share()">Facebook SDK for JavaScript</button>
