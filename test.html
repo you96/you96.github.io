@@ -43,6 +43,15 @@ function share(){
 	  },
 	  function(){});
 }
+function shareRL(){
+	FB.ui(
+	  {
+	    method: 'share',
+	    href: 'http://radioline.co',
+	    display: 'popup'
+	  },
+	  function(){});
+}
 
 </script>
 
@@ -55,6 +64,7 @@ function share(){
 	<div class="fb-like" data-href="http://www.zhihu.com" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 	<div></div>
 <button onclick="share()">Facebook SDK for JavaScript</button><br/>
+<button onclick="shareRL()">Share Radioline.co</button><br/>
 
 	<!--<a href="https://www.facebook.com/dialog/share?app_id=243225579135105&display=popup&href=https%3A%2F%2Fyou96.github.io%2Ftest.html&redirect_uri=http://you96.github.io/test1.html">URL Redirection</a>-->
 <a href="#" 
@@ -79,6 +89,9 @@ function share(){
             return false;">
           Share on Facebook
         </a>
+
+
+
 
 </div>
 
