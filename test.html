@@ -14,7 +14,28 @@ if (d.getElementById(id)) {return;}
 js = d.createElement(s); js.id = id;
 js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+
+FB.ui(
+  {
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  },
+  function(response) {
+    if (response && !response.error_code) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);
+FB.ui({
+  method: 'share',
+  href: 'http://you96.github.io/test.html',
+}, function(response){});
+
+</script>
 
 
 <div id="result">
@@ -23,6 +44,13 @@ fjs.parentNode.insertBefore(js, fjs);
 
 
 	<div class="fb-like" data-href="http://www.zhihu.com" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+
+
+	<a href="https://www.facebook.com/dialog/share?
+  app_id=243225579135105
+  &display=popup
+  &href=https%3A%2F%2Fyou96.github.io%2Ftest.html
+  &redirect_uri=http://you96.github.io/test.html">123</a>
 </div>
 
 </body>
