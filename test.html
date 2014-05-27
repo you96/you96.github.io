@@ -30,10 +30,6 @@ FB.ui(
     }
   }
 );
-FB.ui({
-  method: 'share',
-  href: 'http://you96.github.io/test.html',
-}, function(response){});
 
 </script>
 
@@ -44,13 +40,28 @@ FB.ui({
 
 
 	<div class="fb-like" data-href="http://www.zhihu.com" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
-
+<button onclick="FB.ui()">1111111111111</button>
 
 	<a href="https://www.facebook.com/dialog/share?
   app_id=243225579135105
   &display=popup
   &href=https%3A%2F%2Fyou96.github.io%2Ftest.html
   &redirect_uri=http://you96.github.io/test.html">123</a>
+
+
+
+
+
+<a href="#" 
+          onclick="
+            window.open(
+                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+              'facebook-share-dialog', 
+              'width=626,height=436');
+            return false;">
+          Share on Facebook
+        </a>
+
 </div>
 
 </body>
