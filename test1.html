@@ -29,11 +29,11 @@ div { padding: 10px; }
 
 
 
-function shareRL(){
+function shareRL(permalink){
 	FB.ui(
 	  {
 	    method: 'share',
-	    href: 'http://radioline.co',
+	    href: 'http://radioline.co/'+permalink,
 	    display: 'popup'
 	  },
 	  function(){});
@@ -49,7 +49,7 @@ function shareRL(){
 
 	<div class="fb-like" data-href="http://radioline.co" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 	<div></div>
-<button onclick="shareRL()">Share Radioline.co</button><br/>
+<button onclick="shareRL('radio/radio-r-rtl.html')">Share Radioline.co</button><br/>
 
 
 
