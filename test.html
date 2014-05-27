@@ -43,9 +43,16 @@ FB.ui(
 <button onclick="FB.ui(
   {
     method: 'share',
-    href: 'https://you96.github.io/test.html',
+    href: 'https://developers.facebook.com/docs/',
   },
-  function(response) {});">1111111111111</button>
+  function(response) {
+    if (response && !response.error_code) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);">1111111111111</button>
 
 	<a href="https://www.facebook.com/dialog/share?
   app_id=243225579135105
