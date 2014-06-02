@@ -24,7 +24,16 @@
     }(document));
   	
   	function test(){
-  		alert('123');
+  		FB.api(
+		  'me/oooogggggtest:want',
+		  'post',
+		  {
+		    product: "zhihu.com"
+		  },
+		  function(response) {
+		    // handle the response
+		  }
+		);
   	}
   </script>
 
