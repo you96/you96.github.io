@@ -25,14 +25,18 @@
   	
   	function test(){
   		FB.api(
-		  'me/oooogggggtest:want',
+		  'me/objects/product',
 		  'post',
 		  {
-		    product: "zhihu.com"
+		    app_id: 213689662010141,
+		    type: "product",
+		    url: "http://zhihu.com",
+		    title: "Zhihuuu",
+		    image: "you96.github.com/Itachi.png",
+		    description: "hahahaha...."
 		  },
 		  function(response) {
 		    // handle the response
-		    alert('1');
 		  }
 		);
   	}
