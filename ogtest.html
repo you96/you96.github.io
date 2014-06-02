@@ -50,7 +50,13 @@
   <input type="button" value="test" onclick="javascript:testAction('want', 'product', 'http://you96.github.io/test.html')">
   <script type="text/javascript">
   	function testAction(action, object_type, object_url){
-  		FB.api('/me/oooogggggtest:'+action+'?'+object_type+'='+object_url, 'post', function(){});
+  		FB.api('/me/oooogggggtest:'+action+'?'+object_type+'='+object_url, 'post', function(response){
+  			if(!response || response.error){
+  				alert('Error occured');
+  			}else{
+  				alert('Post successful Action ID:'+response.id);
+  			}
+  		});
   	}	
   </script>
 </body>
