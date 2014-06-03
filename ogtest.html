@@ -36,7 +36,12 @@
 		    description: "hahahaha...."
 		  },
 		  function(response) {
-		    // handle the response
+		  	// handle the response
+		    if (!response || response.error) {
+			    alert('Error occured');
+			  } else {
+			    alert('Post ID: ' + response.id);
+			  }
 		  }
 		);
   	}
