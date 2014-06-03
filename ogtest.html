@@ -41,8 +41,8 @@
 		    if (!response) {
 	           alert('Error occurred.');
 	         } else if (response.error) {
-	           document.getElementById('result').innerHTML =
-	             'Error: ' + response.error.message;
+	           	console.log(response.error);
+			    alert(response.error.message);
 	         } else {
 			    alert('Post ID: ' + response.id);
 			  }
