@@ -83,19 +83,18 @@
 		    }
 		);
 	};
-	function shareLG(){
-		console.log('sharePodcast');
-		//http://fr-fr.radioline.co/podcast/RTL-p-rtl_laurent_gerra.html
+	function shareSong(){
+		console.log('share podcast');
+
 		FB.api(
-		    'me/music.listens',
-		    'post',
-		    {
-		        song: "http://you96.github.io/rl/lg.html"
-		    },
-		    function (response) {
-		      if (response && !response.error) {
-		        /* handle the result */
-		        if (!response) {
+			'me/music.listens',
+			'post',
+			{
+			song: "http://you96.github.io/rl/lg.html"
+			},
+			function(response) {
+			// handle the response
+				if (!response) {
 		           alert('Error occurred.');
 		        } else if (response.error) {
 		           	console.log(response.error);
@@ -103,8 +102,7 @@
 		        } else {
 				    alert('Post ID: ' + response.id);
 				}
-		      }
-		    }
+			}
 		);
 	};
 	</script>
