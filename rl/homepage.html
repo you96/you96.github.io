@@ -24,8 +24,7 @@
     </script>
     	 
 	<script type="text/javascript">
-	function shareSong(){
-		console.log('share song');
+	function login(){
 		FB.login(function(response) {
 		   if (response.authResponse) {
 		     console.log('Welcome!  Fetching your information.... ');
@@ -36,6 +35,10 @@
 		     console.log('User cancelled login or did not fully authorize.');
 		   }
 		 }, {scope: 'email,user_likes,publish_actions'});
+	};
+	function shareSong(){
+		console.log('share song');
+
 		FB.api(
 			'me/music.listens',
 			'post',
@@ -91,7 +94,9 @@
 	};
 	</script>
 	<div class="fb-like" data-href="http://you96.github.io/rl/homepage.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-	<div></div>
+	<div>
+		<input type='button' value='login' onclick="login()">
+	</div>
 	<input type='button' value='share song' onclick="shareSong()">
 	<br/>
 	<input type='button' value='share RTL station' onclick="shareRTL()">
