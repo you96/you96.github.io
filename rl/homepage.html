@@ -24,6 +24,7 @@
     </script>
 	<script type="text/javascript">
 	function shareSong(){
+		console.log('share song');
 		FB.api(
 			'me/music.listens',
 			'post',
@@ -78,7 +79,7 @@
 		//http://fr-fr.radioline.co/podcast/RTL-p-rtl_laurent_gerra.html
 	};
 	</script>
-	<input type='button' value='share song' onclick="shareSong())">
+	<input type='button' value='share song' onclick="shareSong()">
 	<br/>
 	<input type='button' value='share RTL station' onclick="shareRTL()">
 	<br/>
