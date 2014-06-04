@@ -60,24 +60,7 @@
 	};
 	function shareRTL(){
 		console.log('shareStation');
-		FB.api(
-			'me/music.listens',
-			'post',
-			{
-			song: "http://you96.github.io/rl/song.html"
-			},
-			function(response) {
-			// handle the response
-				if (!response) {
-		           alert('Error occurred.');
-		        } else if (response.error) {
-		           	console.log(response.error);
-				    alert(response.error.message);
-		        } else {
-				    alert('Post ID: ' + response.id);
-				}
-			}
-		);
+		
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
 		FB.api(
 		    "/me/objects/music.radio_station",
