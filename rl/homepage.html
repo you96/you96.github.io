@@ -40,6 +40,14 @@
 		    function (response) {
 		      if (response && !response.error) {
 		        /* handle the result */
+		        if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
 		      }
 		    }
 		);
