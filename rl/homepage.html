@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>梓's home page</title>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1418377081780181',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+	<script type="text/javascript">
+	function shareRTL(){
+		console.log('shareStation');
+		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
+	};
+	function shareLG(){
+		console.log('sharePodcast');
+		//http://fr-fr.radioline.co/podcast/RTL-p-rtl_laurent_gerra.html
+	};
+	</script>
+	<input type='button' value='share RTL station' onclick="shareRTL()">
+	<br/>
+	<input type='button' value="share podcast 'RTL - Laurent Gerra'" onclick="shareLG()">
+	
+	<br/>
+
+	<div id="description" style="margin-top: 1000px;">
+		This is the home page to test rl app in order to post some open graph status..
+	</div>
+	
+</body>
+</html>
