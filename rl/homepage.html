@@ -22,8 +22,11 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script type="text/javascript">
-    	 FB.login(function(response) {
+    	 
+	<script type="text/javascript">
+	function shareSong(){
+		console.log('share song');
+		FB.login(function(response) {
 		   if (response.authResponse) {
 		     console.log('Welcome!  Fetching your information.... ');
 		     FB.api('/me', function(response) {
@@ -33,10 +36,6 @@
 		     console.log('User cancelled login or did not fully authorize.');
 		   }
 		 }, {scope: 'email,user_likes,publish_actions'});
-    </script>
-	<script type="text/javascript">
-	function shareSong(){
-		console.log('share song');
 		FB.api(
 			'me/music.listens',
 			'post',
