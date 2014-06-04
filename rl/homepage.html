@@ -4,7 +4,6 @@
 	<title>梓's home page</title>
 </head>
 <body>
-	<div id="fb-root"></div>
 	<script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -26,6 +25,24 @@
 	function shareRTL(){
 		console.log('shareStation');
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
+		FB.api(
+		    "/me/objects/music.radio_station",
+		    "POST",
+		    {
+		        "object": {
+		            "fb:app_id": "1418377081780181",
+		            "og:type": "music.radio_station",
+		            "og:url": "you96.github.io/rl/station.html",
+		            "og:title": "RTL Station",
+		            "og:image": "you96.github.io/rtl.jpg"
+		        }
+		    },
+		    function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		      }
+		    }
+		);
 	};
 	function shareLG(){
 		console.log('sharePodcast');
