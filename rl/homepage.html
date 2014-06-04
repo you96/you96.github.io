@@ -58,6 +58,28 @@
 			}
 		);
 	};
+	function shareNRJ(){
+		console.log('share NRJ');
+
+		FB.api(
+			'me/music.listens',
+			'post',
+			{
+			song: "http://you96.github.io/rl/nrj.html"
+			},
+			function(response) {
+			// handle the response
+				if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+			}
+		);
+	};
 	function shareRTL(){
 		console.log('shareStation');
 		
@@ -111,6 +133,8 @@
 		<input type='button' value='login' onclick="login()">
 	</div>
 	<input type='button' value='share song' onclick="shareSong()">
+	<br/>
+	<input type='button' value='share NRJ station' onclick="shareNRJ()">
 	<br/>
 	<input type='button' value='share RTL station' onclick="shareRTL()">
 	<br/>
