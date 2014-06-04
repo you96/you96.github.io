@@ -44,12 +44,27 @@
 			  }
 		  }
 		);
-  	}
+  	};
+  	function shareRl(){
+  		FB.api(
+		  'me/music.listens',
+		  'post',
+		  {
+		    song: "http://you96.github.io/ogtestshareRadioline.html"
+		  },
+		  function(response) {
+		    // handle the response
+		  }
+		);
+  	};
+
   </script>
 
 	<div class="fb-like" data-href="http://you96.github.io/ogtest.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 	<div></div>
   <input type="button" value="test" onclick="javascript:test()"/>
+  <br/>
+  <input type="button" value="share Radioline" onclick="javascript:shareRl()">
 
 </body>
 </html>
