@@ -54,6 +54,14 @@
 		  },
 		  function(response) {
 		    // handle the response
+		    if (!response) {
+	           alert('Error occurred.');
+	         } else if (response.error) {
+	           	console.log(response.error);
+			    alert(response.error.message);
+	         } else {
+			    alert('Post ID: ' + response.id);
+			  }
 		  }
 		);
   	};
