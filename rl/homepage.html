@@ -63,16 +63,10 @@
 		
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
 		FB.api(
-		    "/me/objects/music.radio_station",
-		    "POST",
+		    'me/music.listens',
+		    'post',
 		    {
-		        "object": {
-		            "fb:app_id": "1418377081780181",
-		            "og:type": "music.radio_station",
-		            "og:url": "http://you96.github.io/rl/rtl.html",
-		            "og:title": "RTL Station",
-		            "og:image": "you96.github.io/rtl.jpg"
-		        }
+		        radio_station: "http://you96.github.io/rl/rtl.html"
 		    },
 		    function (response) {
 		      if (response && !response.error) {
