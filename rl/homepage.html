@@ -23,6 +23,26 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 	<script type="text/javascript">
+	function shareSong(){
+		FB.api(
+			'me/music.listens',
+			'post',
+			{
+			song: "http://you96.github.io/rl/song.html"
+			},
+			function(response) {
+			// handle the response
+				if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+			}
+		);
+	};
 	function shareRTL(){
 		console.log('shareStation');
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
@@ -33,7 +53,7 @@
 		        "object": {
 		            "fb:app_id": "1418377081780181",
 		            "og:type": "music.radio_station",
-		            "og:url": "you96.github.io/rl/rtl.html",
+		            "og:url": "http://you96.github.io/rl/rtl.html",
 		            "og:title": "RTL Station",
 		            "og:image": "you96.github.io/rtl.jpg"
 		        }
