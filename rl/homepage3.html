@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>梓's home page</title>
+</head>
+<body>
+  	<div id="fb-root"></div>
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1418377081780181',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    	 
+	<script type="text/javascript">
+	function login(){
+		FB.login(function(response) {
+		   if (response.authResponse) {
+		     console.log('Welcome!  Fetching your information.... ');
+		     FB.api('/me', function(response) {
+		       console.log('Good to see you, ' + response.name + '.');
+		     });
+		   } else {
+		     console.log('User cancelled login or did not fully authorize.');
+		   }
+		 }, {scope: 'email,user_likes,publish_actions'});
+	};
+
+	function shareRTL(){
+		console.log('shareStation');
+		
+		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
+		FB.api(
+		    'me/music.listens',
+		    'post',
+		    {
+		        radio_station: "http://you96.github.io/rl/rtl.html"
+		    },
+		    function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		        if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+		      }
+		    }
+		);
+	};
+	
+	</script>
+	<div class="fb-like" data-href="http://you96.github.io/rl/homepage.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+	<div>
+		<input type='button' value='login' onclick="login()">
+	<br/>
+	<input type='button' value='share RTL station' onclick="shareRTL()">
+	<br/>
+	
+	<br/>
+
+	<div id="description" style="margin-top: 1000px;">
+		This is the home page to test rl app in order to post some open graph status..
+	</div>
+	
+</body>
+</html>
