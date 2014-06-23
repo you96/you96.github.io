@@ -41,10 +41,10 @@
 		
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
 		FB.api(
-		    'me/music.listens',
-		    'post',
-		    {
-		        radio_station: "http://you96.github.io/rl/rtl.html"
+		  'me/rlpourtest:play',
+		  'post',
+		  {
+		    other: "http://you96.github.io/rl/fun.html"
 		    },
 		    function (response) {
 		      if (response && !response.error) {
