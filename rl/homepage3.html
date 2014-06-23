@@ -45,18 +45,25 @@
 		  'post',
 		  {
 		    radioline: "http://you96.github.io/rl/fun.html"
-		  },
-		  function(response) {
-		    // handle the response
-		    console.log(1);
-		  }
+		    },
+		    function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		        if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+		      }
+		    }
 		);
-		
 	};
 	
 	</script>
-	<!-- 
-	<div class="fb-like" data-href="http://you96.github.io/rl/homepage.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>-->
+	<div class="fb-like" data-href="http://you96.github.io/rl/homepage.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 	<div>
 		<input type='button' value='login' onclick="login()">
 	<br/>
