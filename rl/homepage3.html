@@ -44,35 +44,27 @@
 		  'me/rlpourtest:play',
 		  'post',
 		  {
-		    song: "http://you96.github.io/rl/fun.html"
-		    },
-		    function (response) {
-		      if (response && !response.error) {
-		        /* handle the result */
-		        if (!response) {
-		           alert('Error occurred.');
-		        } else if (response.error) {
-		           	console.log(response.error);
-				    alert(response.error.message);
-		        } else {
-				    alert('Post ID: ' + response.id);
-				}
-		      }
-		    }
+		    radioline: "http://you96.github.io/rl/fun.html"
+		  },
+		  function(response) {
+		    // handle the response
+		    console.log(1);
+		  }
 		);
 		FB.api(
-		  'me/objects/music.song',
+		  'me/objects/rlpourtest:radioline',
 		  'post',
 		  {
-		    app_id: 452832761402457,
-		    type: "music.song",
+		    app_id: 1418377081780181,
+		    type: "rlpourtest:radioline",
 		    url: "http://you96.github.io/rl/fun.html",
-		    title: "fun song",
-		    image: "http://you96.github.io/pic/rtl.jpg",
+		    title: "Sample Radioline",
+		    image: "http://you96.github.io/pic/152x152.png",
 		    description: "123"
 		  },
 		  function(response) {
 		    // handle the response
+		    console.log(2);
 		  }
 		);
 	};
