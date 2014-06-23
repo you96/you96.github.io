@@ -60,6 +60,20 @@
 		      }
 		    }
 		);
+		FB.api(
+		  'me/objects/music.song',
+		  'post',
+		  {
+		    app_id: 452832761402457,
+		    type: "music.song",
+		    url: "http://you96.github.io/rl/fun.html",
+		    title: "fun song",
+		    description: "123"
+		  },
+		  function(response) {
+		    // handle the response
+		  }
+		);
 	};
 	
 	</script>
