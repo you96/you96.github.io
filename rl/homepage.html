@@ -26,7 +26,6 @@
        }(document, 'script', 'facebook-jssdk'));
 	}
 	function login(){
-		fbinit();
 		FB.login(function(response) {
 		   if (response.authResponse) {
 		     console.log('Welcome!  Fetching your information.... ');
@@ -39,7 +38,6 @@
 		 }, {scope: 'email,user_likes,publish_actions'});
 	};
 	function shareSong(){
-		fbinit();
 		console.log('share song');
 
 		FB.api(
@@ -63,7 +61,6 @@
 		);
 	};
 	function shareNRJ(){
-		fbinit();
 		console.log('share NRJ');
 
 		FB.api(
@@ -86,7 +83,6 @@
 		);
 	};
 	function shareRTL(){
-		fbinit();
 		console.log('shareStation');
 		
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
@@ -135,6 +131,9 @@
 	};
 	</script>
 	<div class="fb-like" data-href="http://you96.github.io/rl/homepage.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+	<div>
+		<input type='button' value='fbinit' onclick="fbinit()">
+	</div>
 	<div>
 		<input type='button' value='login' onclick="login()">
 	</div>
