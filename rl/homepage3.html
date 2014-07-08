@@ -42,6 +42,31 @@
 		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
 		FB.api(
 		  'me/music.listens',
+		  'post',
+		  {
+		    song: "http://you96.github.io/rl/rtl2.html"
+		    },
+		    function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		        if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+		      }
+		    }
+		);
+	};
+
+	function addRTL2(){
+		console.log('addStation');
+		
+		//http://fr-fr.radioline.co/radio/RTL-r-rtl.html
+		FB.api(
 		  'me/niodsabjdbj:add',
 		  'post',
 		  	{
@@ -70,7 +95,7 @@
 	<br/>
 	<input type='button' value='share fun station' onclick="shareRTL2()">
 	<br/>
-	
+	<input type='button' value='add fun station' onclick="addRTL2()">
 	<br/>
 
 	<div id="description" style="color:white">
