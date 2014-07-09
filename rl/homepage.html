@@ -107,6 +107,27 @@
 		    }
 		);
 	};
+	function addRTL(){
+		FB.api(
+		  'me/rlpourtest:add',
+		  'post',
+		  {
+		    radio_station: "http://you96.github.io/rl/rtl.html"
+		  },
+		  function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		        if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+		      }
+		);
+	}
 	function shareLG(){
 		console.log('share podcast');
 
@@ -144,6 +165,8 @@
 	<input type='button' value='share RTL station' onclick="shareRTL()">
 	<br/>
 	<input type='button' value="share podcast 'RTL - Laurent Gerra'" onclick="shareLG()">
+	<br/>
+	<input type='button' value="add RTL to favourite" onclick="addRTL()">
 	
 	<br/>
 
