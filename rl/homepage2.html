@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>梓's home page</title>
 </head>
 <body>
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1418377081780181',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    	 
 	<script type="text/javascript">
-	window.location="http://fr-fr.radioline.co";
-</script>
+	function login(){
+		FB.login(function(response) {
+		   if (response.authResponse) {
+		     console.log('Welcome!  Fetching your information.... ');
+		     FB.api('/me', function(response) {
+		       console.log('Good to see you, ' + response.name + '.');
+		     });
+		   } else {
+		     console.log('User cancelled login or did not fully authorize.');
+		   }
+		 }, {scope: 'email,user_likes,publish_actions'});
+	};
+
+	function shareNRJ(){
+		console.log('share NRJ');
+
+		FB.api(
+			'me/music.listens',
+			'post',
+			{
+			song: "http://you96.github.io/rl/nrj.html"
+			},
+			function(response) {
+			// handle the response
+				if (!response) {
+		           alert('Error occurred.');
+		        } else if (response.error) {
+		           	console.log(response.error);
+				    alert(response.error.message);
+		        } else {
+				    alert('Post ID: ' + response.id);
+				}
+			}
+		);
+	};
+
+	
+	
+	</script>
+	
+	<div>
+		<input type='button' value='login' onclick="login()">
+	<br/>
+	<input type='button' value='share NRJ station' onclick="shareNRJ()">
+	<br/>
+
+	<div id="description" style="color:white">
+		This is the home page to test radioline app in order to post some open graph status..
+	</div>
+	
 </body>
 </html>
