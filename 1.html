@@ -1,22 +1,31 @@
+<!doctype html>
 <html>
 <head>
-    <title></title>
-    <script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.zclip.js"></script>
+    <title>Demo</title>
 </head>
 <body>
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			document.getElementById('dynamic').innerHTML('123');
-			//$('#dynamic').innerHTML('input sth');
-			$('a#copy-dynamic').zclip({
-				path:'js/ZeroClipboard.swf',
-				copy:function(){return $('input#dynamic').val();}
-			});
-		});
-	</script>
-    <input id='dynamic' />
-    <a href='#' id='copy-dynamic'>copy-2</a>
+
+<!--text begin-->
+<p id="description">TESTING</p>
+<br>
+<a href="#" id="copy-description" class="">Click here to copy the above text</a>
+<!--text end-->
+
+<!--scripts begin-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $('a#copy-description').zclip({
+            path:'js/ZeroClipboard.swf',
+            copy:$('p#description').text()
+        });
+    });
+</script>
+<!--scripts end-->
+
 </body>
 </html>
