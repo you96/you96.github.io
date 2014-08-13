@@ -6,11 +6,9 @@
 <body>
 
 <!--text begin-->
-<p id="description">TESTING</p>
-<br>
-<a href="#" id="copy-description" class="">Click here to copy the above text</a>
-<br>
-<input type="text" id="sb" value="" />
+<button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
+<textarea name="clipboard-text" id="clipboard-text" cols="30" rows="10">
+lately, I have been losing in rthe sleep think nnin g abot thing s we could be. babay i hace ben prayning hard sy no more countin g dollar we' l l be cont ing stats , yeah we;ll be counting satars</textarea>
 <!--text end-->
 
 <!--scripts begin-->
@@ -20,17 +18,20 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        var client = new ZeroClipboard($('#copy-description'){
-        	moviePath: 'js/ZeroClipboard.swf'
-        });
+        var clientTarget = new ZeroClipboard( $("#target-to-copy"), {
+	    moviePath: "http://paulund.localhost/playground/demo/zeroclipboard-demo/zeroclipboard/ZeroClipboard.swf",
+	    debug: false
+	} );
 
-        client.on('load', function(client)){
-        	client.on('complete', function(client){
-        		this.style.display = 'none';
-        		alert('Copied text to clipboard: ' + args.text );
-        	})
-        }
-    });
+	clientTarget.on( "load", function(clientTarget)
+	{
+	    $('#flash-loaded').fadeIn();
+
+	    clientTarget.on( "complete", function(clientTarget, args) {
+	        clientTarget.setText( args.text );
+	        $('#target-to-copy-text').fadeIn();
+	    } );
+	} );
 </script>
 <!--scripts end-->
 
