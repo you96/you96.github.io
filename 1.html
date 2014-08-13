@@ -1,30 +1,22 @@
 <html>
 <head>
     <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.zclip.js"></script>
 </head>
 <body>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.zclip.js"></script>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
-		$('#copy-description').zclip({
-		path:'js/ZeroClipboard.swf',
-		copy:$('#description').text()
-		});
-		// The link with ID "copy-description" will copy
-		// the text of the paragraph with ID "description"
-		$('#copy-dynamic').zclip({
-		path:'js/ZeroClipboard.swf',
-		copy:function(){return $('input#dynamic').val();}
-		});
-		// The link with ID "copy-dynamic" will copy the current value
-		// of a dynamically changing input with the ID "dynamic"
+			document.getElementById('dynamic').innerHTML('123');
+			//$('#dynamic').innerHTML('input sth');
+			$('a#copy-dynamic').zclip({
+				path:'js/ZeroClipboard.swf',
+				copy:function(){return $('input#dynamic').val();}
+			});
 		});
 	</script>
-	<p id='description'>00544</p>
-    <button id='copy-description'>copy-des</button><br>
-
     <input id='dynamic' />
-    <a href='' id='copy-dynamic'>copy-2</a>
+    <a href='#' id='copy-dynamic'>copy-2</a>
 </body>
 </html>
