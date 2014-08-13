@@ -9,6 +9,8 @@
 <p id="description">TESTING</p>
 <br>
 <a href="#" id="copy-description" class="">Click here to copy the above text</a>
+<br>
+<input type="text" id="sb" />
 <!--text end-->
 
 <!--scripts begin-->
@@ -18,8 +20,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-    	$('a#copy-description').click(function(){alert(1);});
-
+    	$('#sb').innerHTML('dsb');
         $('a#copy-description').zclip({
             path:'js/ZeroClipboard.swf',
             copy:$('p#description').text()
