@@ -3,12 +3,28 @@
     <title></title>
 </head>
 <body>
-    <ul class="categories_stations">
-                                                                                    Aucun résultat ne correspond à votre recherche.<br>
-                                            <br>
-                                            Vérifiez l’orthographe des termes de recherche ou <a href="javascript" onclick="goUrl('/contact'); return false" style="nogoUrl" ><b>contactez le support pour ajouter une radio ou un podcast à notre catalogue.</b></a>
-                                                                                    
-                                                                                
-                                        </ul>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.zclip.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$('#copy-description').zclip({
+		path:'js/ZeroClipboard.swf',
+		copy:$('#description').text()
+		});
+		// The link with ID "copy-description" will copy
+		// the text of the paragraph with ID "description"
+		$('#copy-dynamic').zclip({
+		path:'js/ZeroClipboard.swf',
+		copy:function(){return $('input#dynamic').val();}
+		});
+		// The link with ID "copy-dynamic" will copy the current value
+		// of a dynamically changing input with the ID "dynamic"
+		});
+	</script>
+	<p id='description'>00544</p>
+    <button id='copy-description'>copy-des</button><br>
+
+    <input id='dynamic' />
+    <a href='' id='copy-dynamic'>copy-2</a>
 </body>
 </html>
