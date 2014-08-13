@@ -10,21 +10,26 @@
 <br>
 <a href="#" id="copy-description" class="">Click here to copy the above text</a>
 <br>
-<input type="text" id="sb" value="123" />
+<input type="text" id="sb" value="" />
 <!--text end-->
 
 <!--scripts begin-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 
 <script type="text/javascript" src="js/jquery.zclip.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
-    	$('#sb').innerHTML('dsb');
-        $('a#copy-description').zclip({
-            path:'js/ZeroClipboard.swf',
-            copy:$('p#description').text()
+        var client = new ZeroClipboard($('#copy-description'){
+        	moviePath: 'js/ZeroClipboard.swf'
         });
+
+        client.on('load', function(client)){
+        	client.on('complete', function(client){
+        		this.style.display = 'none';
+        		alert('Copied text to clipboard: ' + args.text );
+        	})
+        }
     });
 </script>
 <!--scripts end-->
