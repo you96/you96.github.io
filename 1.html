@@ -1,39 +1,10 @@
-<!doctype html>
 <html>
-<head>
-    <title>Demo</title>
-</head>
-<body>
+  <body>
+    <div id="d_clip_button" class="clip_button" data-clipboard-text="Copy Me!" title="Click to copy." style="border:1px solid black; padding:20px;">Copy To Clipboard</div>
 
-<!--text begin-->
-<button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button>
-<textarea name="clipboard-text" id="clipboard-text" cols="30" rows="10">
-lately, I have been losing in rthe sleep think nnin g abot thing s we could be. babay i hace ben prayning hard sy no more countin g dollar we' l l be cont ing stats , yeah we;ll be counting satars</textarea>
-<!--text end-->
-
-<!--scripts begin-->
-<script type="text/javascript" src="js/jquery.js"></script>
-
-<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var clientTarget = new ZeroClipboard( $("#target-to-copy"), {
-	    moviePath: "http://paulund.localhost/playground/demo/zeroclipboard-demo/zeroclipboard/ZeroClipboard.swf",
-	    debug: false
-	} );
-
-	clientTarget.on( "load", function(clientTarget)
-	{
-	    $('#flash-loaded').fadeIn();
-
-	    clientTarget.on( "complete", function(clientTarget, args) {
-	        clientTarget.setText( args.text );
-	        $('#target-to-copy-text').fadeIn();
-	    } );
-	} );
-</script>
-<!--scripts end-->
-
-</body>
+    <script type="text/javascript" src="ZeroClipboard.js"></script>
+    <script type="text/javascript">
+      var client = new ZeroClipboard( document.getElementById('d_clip_button') );
+    </script>
+  </body>
 </html>
