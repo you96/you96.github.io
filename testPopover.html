@@ -9,12 +9,12 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    $(".popover-top").popover();/*{
+    $(".popover-top").popover({
         trigger : 'hover',
         placement : 'top'
     });
     
-});*/
+});
 </script>
 <style type="text/css">
     .bs-example{
@@ -25,7 +25,7 @@ $(document).ready(function(){
 <body>
 <div class="bs-example"> 
     <ul class="list-inline">
-        <li><a href="#" class="btn btn-primary popover-top" data-placement="top" data-toggle="popover" title="Popover title" data-content="Default popover">Popover on top</a></li>
+        <li><a href="#" class="btn btn-primary popover-top" data-toggle="popover" title="Popover title" data-content="Default popover">Popover on top</a></li>
        
     </ul>
 </div>
