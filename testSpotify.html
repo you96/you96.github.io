@@ -3,7 +3,33 @@
     <title>Spotify</title>
 </head>
 <body>
-    <script type="text/javascript">
+    
+  <div class="container">
+    <div id="login">
+      <h1>Spotify Users Endpoint Demo</h1>
+        <button id="login" class="btn btn-primary">Login with Spotify</button>
+    </div>
+    <div id="loggedin">
+    </div>
+  </div>
+
+  <script id="loggedin-template" type="text/x-handlebars-template">
+    <h1>Logged in as {{display_name}}</h1>
+    {{#if images}}
+    <img id="avatar" width="200" src="{{images.0.url}}" />
+    {{/if}}
+    <dl class="dl-horizontal">
+      <dt>Display name</dt><dd>{{#if display_name}} {{display_name}} {{else}} - {{/if}}</dd>
+      <dt>Username</dt><dd>{{#if id}} {{id}} {{else}} - {{/if}}</dd>
+      <dt>Email</dt><dd>{{#if email}} {{email}} {{else}} - {{/if}}</dd>
+      <dt>Spotify URI</dt><dd>{{#if uri}}<a href="{{uri}}">{{uri}}</a>{{else}} - {{/if}}</dd>
+      <dt>Link</dt><dd>{{#if external_urls.spotify}}<a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a>{{else}} - {{/if}}</dd>
+
+      <dt>Profile Image</dt><dd>{{#if images}} {{images.0.url}} {{else}} - {{/if}}</dd>
+    </dl>
+  </script>
+
+  <script type="text/javascript">
         function receiveMessage(event){
             if (event.origin !== "http://you96.github.io") {
                 return;
@@ -71,30 +97,5 @@
         }
 
     </script>
-  <div class="container">
-    <div id="login">
-      <h1>Spotify Users Endpoint Demo</h1>
-        <button id="login" class="btn btn-primary">Login with Spotify</button>
-    </div>
-    <div id="loggedin">
-    </div>
-  </div>
-
-  <script id="loggedin-template" type="text/x-handlebars-template">
-    <h1>Logged in as {{display_name}}</h1>
-    {{#if images}}
-    <img id="avatar" width="200" src="{{images.0.url}}" />
-    {{/if}}
-    <dl class="dl-horizontal">
-      <dt>Display name</dt><dd>{{#if display_name}} {{display_name}} {{else}} - {{/if}}</dd>
-      <dt>Username</dt><dd>{{#if id}} {{id}} {{else}} - {{/if}}</dd>
-      <dt>Email</dt><dd>{{#if email}} {{email}} {{else}} - {{/if}}</dd>
-      <dt>Spotify URI</dt><dd>{{#if uri}}<a href="{{uri}}">{{uri}}</a>{{else}} - {{/if}}</dd>
-      <dt>Link</dt><dd>{{#if external_urls.spotify}}<a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a>{{else}} - {{/if}}</dd>
-
-      <dt>Profile Image</dt><dd>{{#if images}} {{images.0.url}} {{else}} - {{/if}}</dd>
-    </dl>
-  </script>
-
 </body>
 </html>
