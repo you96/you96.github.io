@@ -27,7 +27,7 @@
       <dt>Profile Image</dt><dd>{{#if images}} {{images.0.url}} {{else}} - {{/if}}</dd>
     </dl>
   </script>
-    <script type="text/javascript">
+    <script type="text/javascript">/*
         function receiveMessage(event){
             if (event.origin !== "http://you96.github.io") {
                 return;
@@ -38,7 +38,7 @@
             showInfo(event.data);
         }
 
-        window.addEventListener("message", receiveMessage, false);
+        window.addEventListener("message", receiveMessage, false);*/
 
         function toQueryString(obj) {
             var parts = [];
@@ -73,7 +73,7 @@
         document.getElementById('login').addEventListener('click', function() {
          login();
         });
-
+/*
         function showInfo(accessToken) {
             // fetch information about me
             $.ajax({
@@ -92,7 +92,7 @@
                     $('div#loggedin').show();
                 }
             });
-        }
+        }*/
 
     </script>
 </body>
