@@ -1,10 +1,9 @@
 <html>
 <head>
-    <title>Spotify</title>
+    <title>test Spotify</title>
 </head>
 <body>
-    
-  <div class="container">
+      <div class="container">
     <div id="login">
       <h1>Spotify Users Endpoint Demo</h1>
         <button id="login" class="btn btn-primary">Login with Spotify</button>
@@ -28,8 +27,7 @@
       <dt>Profile Image</dt><dd>{{#if images}} {{images.0.url}} {{else}} - {{/if}}</dd>
     </dl>
   </script>
-
-  <script type="text/javascript">
+    <script type="text/javascript">
         function receiveMessage(event){
             if (event.origin !== "http://you96.github.io") {
                 return;
@@ -54,13 +52,13 @@
         var authWindow = null;
 
         function login() {
-            var width = 400,
-                height = 500;
+            var width = 800,
+                height = 600;
             var left = (screen.width / 2) - (width / 2);
             var top = (screen.height / 2) - (height / 2);
             
             var params = {
-                client_id: '5fe01282e94241328a84e7c5cc169164',
+                client_id: '9934f86651994bbc87b62936a715b2e1',
                 redirect_uri: 'http://you96.github.io/testSpotify.html',
                 scope: 'user-read-private user-read-email',
                 response_type: 'token'
@@ -68,7 +66,7 @@
             authWindow = window.open(
                 "https://accounts.spotify.com/authorize?" + toQueryString(params),
                 "Spotify",
-                'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
+                'menubar=no,location=no,resizable=no,scrollbars=yes,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
             );
         }
 
