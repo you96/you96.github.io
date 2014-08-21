@@ -5,6 +5,7 @@
 <body>
     <button onclick="DZ.login();" >login</button>
 
+<button onclick="showName();">name</button>
     <div id="dz-root"></div>
     <script src="http://cdn-files.deezer.com/js/min/dz.js"></script>
     <script>
@@ -12,7 +13,14 @@
     appId : '142595',
     channelUrl : 'http://you96.github.io/testDeezer.html'
     });
+    function showName(){
+        DZ.api('/user/me', function(response){
+            alert("My name", response.name);
+        });
+    }
     </script>
+
+
 
 
 </body>
