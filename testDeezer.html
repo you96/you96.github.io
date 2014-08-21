@@ -6,6 +6,8 @@
     <button onclick="DZ.login();" >login</button>
 
 <button onclick="showName();">name</button>
+
+<button onclick="showArtists();">name</button>
     <div id="dz-root"></div>
     <script src="http://cdn-files.deezer.com/js/min/dz.js"></script>
     <script>
@@ -16,6 +18,13 @@
     function showName(){
         DZ.api('/user/me', function(response){
             alert(response.name);
+        });
+    }
+    function showArtists(){
+        DZ.api('/user/me/artists', function(response){
+            for(var i=0; i<response.data.length;i++){
+                console.log(response.data[i].name);
+            }
         });
     }
     </script>
