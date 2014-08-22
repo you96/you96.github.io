@@ -14,6 +14,7 @@ var hash = window.location.hash;
 if (hash) {
 var token = window.location.hash.split('&')[0].split('=')[1];
 document.getElementById('token').innerHTML=token;
+console.log(token);
 //target.postMessage(token, 'http://fiddle.jshell.net'); //embedded
 target.postMessage(token, 'http://you96.github.io'); // fullscreen
 }
