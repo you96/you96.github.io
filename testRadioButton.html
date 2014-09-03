@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Dialog - Default functionality</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function() {
+$( "#dialog" ).dialog();
+});
+</script>
+</head>
+<body>
+  <div id="playList">
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input class="121" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Option two can be something else and selecting it will deselect option one
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled >
+    Option three is disabled
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input class="121" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+    Option four, freeze
+  </label>
+</div>
+</div>
+ <div id="newplaylist">
+        <a id="addButton" href="javascript:;" onclick="addNewPlaylist();" class="nogoUrl" >Add</a>
+        <div id="hidediv" style="display:none">
+          <input type="text" id="newPlayList" />
+            <button class="btnok" onclick="ConfirmNewPL();">Done</button>
+          <button onclick="cancelAddNewPL();">Cancle</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    	function addNewPlaylist(){
+    $("#addButton").hide();
+    $("#hidediv").show();
+    $(".121").prop('disabled', true);
+}
+    function cancelAddNewPL(){
+      $("#addButton").show();
+      $("#hidediv").hide();
+      $(".121").prop('disabled', false);
+    }
+    function ConfirmNewPL(){
+    cancelAddNewPL();
+    $("#playList").append('<div class="radio"><label><input type="radio" class="pl" name="optionsRadios" value="myNewPL">'+$("#newPlayList").val()+'</label></div>');
+}
+    </script>
+</body>
+</html>
